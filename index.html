@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>Демонстрация виджета color-picker</title>
+		<script src="elements.js"></script>
+	</head>
+	
+	<body>
+		<color-picker></color-picker>
+		
+		<script>
+			const colorPicker = document.querySelector('color-picker');
+			colorPicker.addEventListener('colorChanged', (event) => {
+				console.log(`"action" emitted: ${event.detail}`);
+			}) ;
+			colorPicker.pointerColor="#8F8F8F";
+			colorPicker.widgetVisibility = true;
+		</script>
+	
+	</body>
+
+</html>

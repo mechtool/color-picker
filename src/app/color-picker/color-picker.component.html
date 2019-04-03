@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<div class="pickerVisibility" *ngIf="!widgetVisibility" (click)="onClickReadyButton('start')" [style.background-color]="pointerColor">Color Picker</div>
+<div class="color-picker-container" *ngIf="widgetVisibility"  [style.width]="width" [style.height]="height" (contextmenu)="onContextMenu($event)">
+	<div #pickerField [style.background-color]="localScope.baseColor"  class="color-picker-field" (mousedown)="onMouseDownPickerField({pointer : colorPickerPointer, pointerField : pickerField, event : $event})">
+		<div #colorPickerPointer class="color-picker-pointer" [style.top]="colorPickerPointerTop" [style.left]="colorPickerPointerLeft"></div>
+	</div>
+	<div #rainbowField class="rainbow-field" (mousedown)="onMouseDownPickerField({pointer : rainbowPointer, pointerField : rainbowField, event : $event})">
+		<div #rainbowPointer class="rainbow-pointer" [style.top]="rainbowPointerTop" [style.left]="rainbowPointerLeft"></div>
+	</div>
+	<div class="meta-field">
+		<div class="color-field">
+			<div class="former-color" [style.background-color]="pointerColor"></div>
+			<div class="new-color" [style.background-color]="newColor"></div>
+		</div>
+		<form  [formGroup]="textColorGroup" class="text-color-field" novalidate (mousedown)="handleClick()">
+			<div>{{localScope.mode[0][0]}} :<input  readonly id="first-text" maxlength="3" class="first-text" formControlName="firstField"></div>
+			<div>{{localScope.mode[0][1]}} :<input readonly id="second-text" maxlength="3" class="second-text" formControlName="secondField"></div>
+			<div>{{localScope.mode[0][2]}} :<input readonly id="third-text" maxlength="3" class="third-text" formControlName="thirdField"></div>
+		</form>
+		<div class="apply-button" (click)="onClickReadyButton()">
+			<span class="button-text" >Готово</span></div>
+	</div>
+
+</div>

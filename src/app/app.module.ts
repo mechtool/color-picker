@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { ColorPickerComponent } from './color-picker/color-picker.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [ColorPickerComponent],
+    imports: [BrowserModule, ReactiveFormsModule],
+    entryComponents: [ColorPickerComponent]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(private injector: Injector) {
+        customElements.define('color-picker', createCustomElement(ColorPickerComponent, { injector }));
+    }
+    
+    ngDoBootstrap() {}
+}

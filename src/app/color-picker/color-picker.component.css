@@ -1,0 +1,95 @@
+.pickerVisibility{
+    border: 1px solid;
+    display: inline-block;
+    padding: 8px;
+    cursor: pointer;
+}
+.color-picker-container{
+    border: 1px solid #979797;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #e5e5e5;
+    user-select: none;
+}
+.color-picker-field{
+    background-image: linear-gradient(to top, #000, transparent),linear-gradient(to right, #FFE, transparent);
+    width: calc(65% - 8px);
+    height: calc(100% - 10px);
+    cursor: crosshair;
+    overflow: hidden;
+}
+.color-picker-pointer{
+    width: 8px;
+    height: 8px;
+    border: 1px solid white;
+    outline: 1px solid;
+    left: 150px;
+    position: relative;
+}
+.rainbow-field{
+    width: calc(10% - 8px);
+    height: calc(100% - 10px);
+    cursor: ns-resize;
+    background: linear-gradient(to bottom,  #f00 0%, #ff0 ,  #0f0 , #0ff,  #00f, #f0f, #f00 100%);
+}
+.rainbow-pointer{
+    width: 100%;
+    border-top: 1px solid;
+    top: 20px;
+    position: relative;
+}
+.meta-field{
+    width: calc(25% - 8px);
+    height: calc(100% - 10px);
+}
+.color-field{
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+}
+.color-field > div{
+    width: 50%;
+    height: 100%;
+}
+.former-color{
+    background: darkred;
+}
+.new-color{
+    background: green;
+}
+.text-color-field > div{
+    position: relative;
+    line-height: 28px;
+    font-size: 18px;
+}
+.text-color-field{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.text-color-field input{
+    width: 65%;
+    height: 26px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    border: 0;
+    background: #b4b4b4cc;
+}
+.apply-button{
+    height: 20% ;
+    background: #d2eaea;
+    border: 1px solid #a4a4a4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.apply-button:hover{
+    background: #bce1ea;
+}
